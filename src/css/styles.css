@@ -1,0 +1,47 @@
+/* Adds Tailwind to CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables*/
+
+@layer base {
+	body {
+		@apply font-sans;
+	}
+	h1 {
+		@apply font-medium text-[42px] leading-[44px] lg:text-[56px] lg:leading-[60px];
+	}
+	h2 {
+		@apply font-medium text-[22px] leading-[22px] lg:text-[30px] lg:leading-[30px];
+	}
+	p {
+		@apply font-normal text-[14px];
+	}
+
+	img {
+		@apply max-w-full h-auto;
+	}
+}
+
+@layer components {
+	.card {
+		@apply rounded-lg w-full overflow-hidden flex flex-col justify-center items-center p-4 md:p-6 gap-4 lg:items-start;
+		flex: 0 1 auto;
+	}
+
+	@media (min-width: 768px) {
+		.aside-container {
+			grid-template-rows: 415px 434px;
+		}
+		.main-container {
+			grid-template-rows: 324px 247px 246px;
+		}
+	}
+}
+
+@layer utilities {
+	.max-w-unset {
+		max-width: unset;
+	}
+}
